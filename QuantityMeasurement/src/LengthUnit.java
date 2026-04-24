@@ -10,13 +10,18 @@ public enum LengthUnit {
 
     private final double toFeetFactor;
 
+    // Constructor
     LengthUnit(double toFeetFactor) {
         this.toFeetFactor = toFeetFactor;
     }
 
+    // Convert given value → feet (base unit)
     public double toFeet(double value) {
         return value * toFeetFactor;
     }
 
-    
+    // Convert from feet → target unit
+    public double fromFeet(double feetValue) {
+        return feetValue / toFeetFactor;
+    }
 }
